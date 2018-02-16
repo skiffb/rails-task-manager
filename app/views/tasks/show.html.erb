@@ -1,0 +1,13 @@
+<h1><%= @task.title %></h1>
+<div class="container">
+  <p><%= @task.details %></p>
+  <% if @task.completed %>
+  <% comp = "X" %>
+  <% word = "completed" %>
+  <% else %>
+  <% comp = " " %>
+  <% word = "incomplete" %>
+  <% end %>
+  <p>[<%= comp %>] The task is <%= word %></p>
+</div>
+<%= link_to "Go back to tasks", tasks_path %>
