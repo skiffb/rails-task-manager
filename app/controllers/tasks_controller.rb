@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
     task.save
-    redirect_to tasks_path
+    redirect_to task_path(task)
   end
 
   def edit
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def update
     pick_a_task
     @task.update(task_params)
-    redirect_to tasks_path
+    redirect_to task_path(@task)
   end
 
   def destroy
